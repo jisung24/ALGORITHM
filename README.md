@@ -1,2 +1,4 @@
 # ALGORITHM
-This is a auto push repository for Baekjoon Online Judge created with [BaekjoonHub](https://github.com/BaekjoonHub/BaekjoonHub).
+
+## 2023 - 06 - 10 (토)
+> isNaN(값) - 숫자인지 아닌지 판단해주는 함수! (숫자일 경우 false를 return한다)
