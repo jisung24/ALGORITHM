@@ -1,17 +1,18 @@
+# 비교될 수 있는 게 1대1이니까 선형 자료구조! 
+# 그래프, 트리는 절대 아님 
+
+
 def solution(s):
-    # 마지막에 온 열린 괄호가 먼저 닫혀야한다! 
-    # 대신 )는 무조건 stack에 열린 괄호가 있어야 돼! 
     stack = []
-    for i in s: # for-of 같은 문법! 
+    
+    for i in s:
         if i == '(':
             stack.append(i)
-        else: # 만약 닫는 괄호가 왔다면! 
-            if len(stack) == 0: # 만약 stack이 비어있다면! 
+        else: # ')'가 온 경우!
+            if len(stack) == 0: # 스택이 비어있는 경우...! 
                 return False
-            else:
-                stack.pop() # 내보내줘...! 
-                
+            else: # 스택이 비어있지 않은경우! 
+                stack.pop() # 빼준다. 
     return len(stack) == 0
-                
             
         
