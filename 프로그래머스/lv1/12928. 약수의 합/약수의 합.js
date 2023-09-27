@@ -1,11 +1,20 @@
-function solution(number) {
-    let sum = 1;
-    if(typeof number !== 'number') throw new Error("자연수가 와야합니다...!");
-    if(number === 0 || number === 1) return number;
-    // 0과 1은 제외함 위에서! 
-    for(let i = 2; i <= number; i++) {
-        if(number % i === 0) sum += i;
+// 1. 약수 구하기 
+// 2. 배열(약수들)의 합
+
+// 여긴 2이상만 들어옴! 
+const divisors = (n) => {
+    const arr = [];
+    for(let i = 1; i <= n; i++) {
+        if(n % i === 0) arr.push(i);
     }
     
-    return sum;
+    return arr;
+}
+const sumOfDivisors = (arr) => {
+    return arr.reduce((acc, cur) => acc + cur);
+}
+
+const solution = (n) => {
+    if(n === 0 || n === 1) return n;
+    return sumOfDivisors(divisors(n));
 }
