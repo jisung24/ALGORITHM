@@ -1,0 +1,8 @@
+// 점의 위치 구하기 => 사분면 구하기!
+function solution(dot) {
+    const [x, y] = dot;
+    if(x > 0 && y > 0) return 1;
+    if(x > 0 && y < 0) return 4;
+    if(x < 0 && y > 0) return 2;
+    if(x < 0 && y < 0) return 3;
+}
