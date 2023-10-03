@@ -1,8 +1,14 @@
-// 점의 위치 구하기 => 사분면 구하기!
+const checkHasZero = (dot) => {
+    return dot.some(e => e === 0);
+}
+
 function solution(dot) {
-    const [x, y] = dot;
-    if(x > 0 && y > 0) return 1;
-    if(x > 0 && y < 0) return 4;
-    if(x < 0 && y > 0) return 2;
-    if(x < 0 && y < 0) return 3;
+    if(checkHasZero(dot)) throw new Error("0이 포함 돼 있어서 이상한 좌표입니다!");
+    const [dotX, dotY] = dot;
+    
+    if(dotX > 0 && dotY > 0) return 1; 
+    if(dotX > 0 && dotY < 0) return 4;
+    if(dotX < 0 && dotY > 0) return 2;
+    if(dotX < 0 && dotY < 0) return 3;
+    return;
 }
