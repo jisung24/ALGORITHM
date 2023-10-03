@@ -1,9 +1,4 @@
-// 1. reverse 
-// 2. stack
+const reverseArray = (arr) => arr.reverse();
 function solution(num_list) {
-    const stack = [];
-    for(let i = num_list.length - 1; i >= 0; i--){
-        stack.push(num_list[i]);
-    }
-    return stack;
+    return reverseArray(num_list);
 }
