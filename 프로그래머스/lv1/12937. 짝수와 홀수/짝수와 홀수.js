@@ -1,7 +1,11 @@
-// 1. 짝수이면 Even, 홀수이면 Odd 
+const checkNumberType = (number) => {
+    return typeof number === 'number';
+}
 
-// - 짝수, 홀수 판별해주는 함수! 
-const isEven = (number) => number % 2 === 0; 
+const checkEvenNumber = (number) => {
+    return number % 2 === 0;
+}
 const solution = (number) => {
-    return isEven(number) ? "Even" : "Odd";
+    if(!checkNumberType(number)) throw new Error("숫자를 입력받아야 합니다!");
+    return checkEvenNumber(number) ? "Even" : "Odd";
 }
