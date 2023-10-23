@@ -1,14 +1,13 @@
 const getGCD = (num1, num2) => {
-    let gcd = 0;
-    const minNumber = Math.min(...[num1, num2]);
-
-    for(let i = 2; i <= minNumber; i++) {
+    const minNumber = Math.min(num1, num2);
+    // 반복문 횟수 줄이기! => 거꾸로
+    for(let i = minNumber; i >= 2; i--) {
         if(num1 % i === 0 && num2 % i === 0) {
-            gcd = i;
+            return i
         } 
     }
-
-    return gcd === 0 ? undefined : gcd;
+    // 없으면 
+    return 0
 }
 
 function solution(num1, num2, num3, num4) {
@@ -16,5 +15,5 @@ function solution(num1, num2, num3, num4) {
     const numer = (num1 * num4) + (num2 * num3);
 
     const gcd = getGCD(denom, numer);
-    return !gcd ? [numer, denom] : [numer / gcd, denom / gcd];
+    return gcd === 0 ? [numer, denom] : [numer / gcd, denom / gcd];
 }
