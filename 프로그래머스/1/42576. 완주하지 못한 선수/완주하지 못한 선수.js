@@ -13,7 +13,7 @@ function solution(participant, completion) {
     }
     
     // 무조건 1명만 나오게 되어있어! 
-    for(let value of map) {
-        if(value[1] === 1) return value[0]
+    for(let [key, value] of map) {
+        if(value === 1) return key
     }
 }
